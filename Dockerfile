@@ -41,4 +41,6 @@ RUN echo "@edge https://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/reposit
 
 COPY . /mastodon
 
+RUN SECRET_KEY_BASE=dummy bundle exec rails assets:precompile
+
 VOLUME /mastodon/public/system /mastodon/public/assets
